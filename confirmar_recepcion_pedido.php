@@ -16,7 +16,7 @@ else{
     throw new Exception("FATAL ERROR: Hospital not in our database");
 }
 $True =1;
-$queryRecibido = "UPDATE pedidos_conectados SET fecha_recibido ='$fecha_recibido' AND  SET recibido = '$True' WHERE id_pedido ='$id_pedido' AND enviado = '$True' AND id_hospital = '$id_hospital' AND recibido ='$FALSE' ";
+$queryRecibido = "UPDATE pedidos_conectados SET fecha_recibido ='$fecha_recibido' AND  SET recibido = '$True' WHERE id ='$id_pedido' AND enviado = '$True' AND id_hospital = '$id_hospital' AND recibido ='$FALSE' ";
 $resultado = $conexion->query($queryRecibido);
 if ($resultado){
     $result = Array();
