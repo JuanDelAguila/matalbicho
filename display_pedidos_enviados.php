@@ -1,9 +1,9 @@
 <?php
 include 'connexion.php';
 
-$usuario = $_POST['usuario'];
+//$usuario = $_POST['usuario'];
 $True = 1;
-//$usuario = "juan";
+$usuario = "lapaz";
 
 // Encontrar ID de hospital a partir de nombre de usuario
 $queryHospital = "SELECT id FROM hospitales WHERE usuario = '$usuario'";
