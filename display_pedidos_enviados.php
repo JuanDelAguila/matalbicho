@@ -3,6 +3,7 @@ include 'connexion.php';
 
 $usuario = $_POST['usuario'];
 $True = 1;
+$False = 0;
 //$usuario = "lapaz";
 
 // Encontrar ID de hospital a partir de nombre de usuario
@@ -19,7 +20,7 @@ else{
 }
 
 // Seleccionar pedidos conectados de un hospital
-$query = "SELECT * FROM pedidos_conectados WHERE id_hospital = '$id_hospital' AND enviado = '$True'";
+$query = "SELECT * FROM pedidos_conectados WHERE id_hospital = '$id_hospital' AND enviado = '$True' AND recibido = '$False'";
 
 $resultado = $conexion -> query($query);
 
