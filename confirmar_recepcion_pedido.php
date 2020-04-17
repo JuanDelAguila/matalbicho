@@ -18,7 +18,7 @@ else{
 $True =1;
 $queryRecibido = "UPDATE FROM  pedidos_completados SET fecha_de_recepcion ='$fecha_recibido' AND  SET recibido = '$True' WHERE id_pedido ='$id_pedido' AND enviado = '$True' AND id_hospital = '$id_hospital' AND recibido ='$FALSE' ";
 $resultado = $conexion->query($queryRecibido);
-if ($resulatdo){
+if ($resultado){
     $result = Array();
     $result["success"] = true;
     echo json_encode($result);
