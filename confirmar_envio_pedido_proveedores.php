@@ -20,7 +20,7 @@ $query_enviado = "UPDATE FROM pedidos completados SET enviado = '$TRUE', fecha_e
 
 $resultado2= $conexion->query($query_enviado);
 
-if (mysqli_rows_affected($conexion) != 0){
+if (mysqli_affected_rows($conexion) != 0){
     $result = Array();
     $result["success"] = true;
     echo json_encode($result);
