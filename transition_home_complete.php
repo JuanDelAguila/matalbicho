@@ -32,7 +32,9 @@ if(mysqli_num_rows($resultadoCantidad)){
     $cantidad = intval($resultadoCantidad ->fetch_assoc()["cantidad"]);
     //echo $id_hospital;
 }
-
+else{
+    throw new Exception("FATAL ERROR: Hospital not in our database");
+}
 
 // ID OBJETO
 
@@ -44,7 +46,9 @@ if(mysqli_num_rows($resultadoObjeto)){
     $id_objeto = intval($resultadoObjeto ->fetch_assoc()["id_objeto"]);
     //echo $id_hospital;
 }
-
+else{
+    throw new Exception("FATAL ERROR: Hospital not in our database");
+}
 
 // FECHA
 
@@ -56,7 +60,9 @@ if(mysqli_num_rows($resultadoFecha)){
     $fecha = $resultadoFecha ->fetch_assoc()["fecha"];
     //echo $id_hospital;
 }
-
+else{
+    throw new Exception("FATAL ERROR: Hospital not in our database");
+}
 
 // DIRECCION
 $queryDireccion = "SELECT direccion_envio FROM pedidos_pendientes WHERE id = '$id' AND id_proveedor = '$id_proveedor' AND id_hospital = '$id_hospital'";
@@ -67,7 +73,9 @@ if(mysqli_num_rows($resultadoDireccion)){
     $direccion_envio = $resultadoDireccion ->fetch_assoc()["direccion_envio"];
     //echo $id_hospital;
 }
-
+else{
+    throw new Exception("FATAL ERROR: Hospital not in our database");
+}
 
 $query1 = "INSERT INTO pedidos_conectados (id, id_objeto, cantidad, id_proveedor, id_hospital, fecha, direccion_envio) VALUES ('".$id."', '".$id_objeto."' , '".$cantidad."', '".$id_proveedor."', '".$id_hospital."', '".$fecha."', '".$direccion_envio."')";
 
