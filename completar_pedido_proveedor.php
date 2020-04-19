@@ -7,7 +7,7 @@ $id = intval($_POST['id']);
 $True = 1;
 $False = 0;
 
-$queryproveedor = "SELECT id FROM proveedores WHERE usuario = '$usuario'";
+$queryproveedor = "SELECT id FROM proveedores WHERE usuario = '$user'";
 $resultadoProveedor = $conexion ->query($queryproveedor);
 if(mysqli_num_rows($resultadoProveedor)){
     $id_proveedor = $resultadoProveedor ->fetch_assoc()["id"];
