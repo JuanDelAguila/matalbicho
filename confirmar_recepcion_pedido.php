@@ -18,7 +18,7 @@ else{
 $True =1;
 $queryRecibido = "UPDATE pedidos_conectados SET fecha_recibido ='$fecha_recibido' ,  SET recibido = '$True' WHERE id ='$id_pedido' AND enviado = '$True' AND id_hospital = '$id_hospital' AND recibido ='$FALSE' ";
 $resultado = $conexion->query($queryRecibido);
-if (mysql_affected_rows()!=0){
+if (mysqli_affected_rows()!=0){
     $result = Array();
     $result["success"] = true;
     echo json_encode($result);
