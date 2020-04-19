@@ -17,9 +17,9 @@ else{
     throw new Exception("FATAL ERROR: Producer not in our database");
 }
 
-$queryUpdate = "UPDATE pedidios_completados SET completado ='$True' WHERE completado = '$False' AND enviado = '$False'  AND recibido = '$False'  AND id = '$id' AND id_proveedor = '$id_proveedor'";
+$queryUpdate = "UPDATE pedidos_completados SET completado ='$True' WHERE completado = '$False' AND enviado = '$False'  AND recibido = '$False'  AND id = '$id' AND id_proveedor = '$id_proveedor'";
 $resultado = $conexion->query($queryUpdate);
-if (mysqli_affected_rows($conexion)==1){
+if (mysqli_affected_rows($conexion)!=0){
     $result = Array();
     $result["success"] = true;
     echo json_encode($result);
