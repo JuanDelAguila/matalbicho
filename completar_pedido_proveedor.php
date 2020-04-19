@@ -1,0 +1,33 @@
+<?php
+include 'connexion.php';
+$user = $_POST['user'];
+$id = intval($_POST['id']);
+$True = 1;
+$False = 0;
+
+$queryproveedor = "SELECT id FROM hospitales WHERE usuario = '$usuario'";
+$resultadoProveedor = $conexion ->query($queryproveedor);
+if(mysqli_num_rows($resultadoProveedor)){
+    $id_proveedor = $resultadoProveedor ->fetch_assoc()["id"];
+  
+}
+else{
+    throw new Exception("FATAL ERROR: Hospital not in our database");
+}
+
+$queryUpdate = "UPDATE pedidios_completados SET completado ='$True' WHERE completado = '$False' AND enviado = '$False'  AND recibido = '$False'  AND id = '$id' AND id_proveedor = '$id_proveedor'";
+$resultado = $conexion->query($queryUpdate);
+if ((mysql_affected_rows()!=0){
+    $result = Array();
+    $result["success"] = true;
+    echo json_encode($result);
+
+}
+else {
+    $result = Array();
+    $result["success"] = false;
+    echo json_encode($result);
+
+}
+$conexion -> close();
+?>
