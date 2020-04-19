@@ -4,7 +4,7 @@ $id_pedido = intval($_POST['id_pedido']);
 $username = $_POST['username'];
 //$id_pedido = 6;
 //$usuario = "test";
-$queryProveedor = "SELECT id FROM proveedores WHERE usuario = '$usuario'";
+$queryProveedor = "SELECT id FROM proveedores WHERE usuario = '$username'";
 
 $resultadoProveedor = $conexion ->query($queryProveedor);
 
