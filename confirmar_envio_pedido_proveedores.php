@@ -16,7 +16,7 @@ if(mysqli_num_rows($resultado)){
 else{
     throw new Exception("Fatal error");
 }
-$query_enviado = "UPDATE FROM pedidos completados SET enviado = '$TRUE', fecha_envio = '$fecha' WHERE id = '$id' AND id_proveedor = '$id_proveedor' AND recibido = 0 AND enviado = 0";
+$query_enviado = "UPDATE pedidos_conectados SET enviado = '$TRUE', fecha_envio = '$fecha' WHERE id = '$id' AND id_proveedor = '$id_proveedor' AND recibido = 0 AND enviado = 0";
 
 $resultado2= $conexion->query($query_enviado);
 
