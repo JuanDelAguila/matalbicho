@@ -4,8 +4,8 @@ include 'connexion.php';
 $user = $_POST['user'];
 $id = intval($_POST['id']);
 
-$user = "test";
-$id = 45;
+//$user = "test";
+//$id = 45;
 
 $True = 1;
 $False = 0;
