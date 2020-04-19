@@ -1,8 +1,8 @@
 <?php
 include 'connexion.php';
 
-//$usuario = $_POST['usuario'];
-$usuario = "test";
+$usuario = $_POST['usuario'];
+//$usuario = "test";
 
 // Encontrar ID de proveedor a partir de nombre de usuario
 $queryProveedor = "SELECT id FROM proveedores WHERE usuario = '$usuario'";
