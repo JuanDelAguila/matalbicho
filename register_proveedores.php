@@ -3,7 +3,7 @@
 include 'connexion.php';
 $nombre =$_POST['nombre'];
 $usuario =$_POST['usuario'];
-//$descripcion =$_POST['descripcion'];
+$descripcion =$_POST['descripcion'];
 $email = $_POST['email'];
 $password =$_POST['password'];
 $direccion =$_POST['direccion'];
@@ -13,7 +13,7 @@ $telefono =$_POST['telefono'];
 //$direccion = "aaaaaa";
 //$email = "bxcvbx";
 //$telefono = "erwtert";
-$descripcion = "hola";
+//$descripcion = "hola";
 //$password ="test";
 
 $consulta = "INSERT INTO proveedores (nombre, usuario, password, direccion, telefono, email, descripcion) VALUES ('".$nombre."', '".$usuario."', '".$password."', '".$direccion."', '".$telefono."', '".$email."','".$descripcion."')";
